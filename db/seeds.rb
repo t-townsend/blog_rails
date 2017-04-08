@@ -16,6 +16,7 @@ end
 20.times do
   avatar = Avatar.all.sample
   User.create(avatar: avatar.name,
+              body: Faker::Hipster.paragraph(2),
               name: Faker::StarWars.character,
               email: Faker::Internet.email,
               password: '12345678',

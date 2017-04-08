@@ -1,217 +1,240 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Post Show</title>
-      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <link rel="stylesheet" href="/css/show_style.css">
-  </head>
-  <body>
+    <head>
+        <meta charset="utf-8">
+        <title>Post Show</title>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/show_style.css">
+    </head>
+    <body>
 
-    <p><%= @post.user_id %></p>
+        <div class="page-container">
 
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">TT</a>
+                    </div>
 
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
 
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#">Sign up</a>
+                            </li>
+                            <li>
+                                <a href="#">Log in</a>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-right">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
 
-    <div class="page-container">
-
-        <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">TT</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Sign up</a></li>
-            <li><a href="#">Log in</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
+            <!-- post -->
+            <div class="container-fluid no-padding">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/photos/<%= @post.image %>" alt="placeholder 960" class="stop img-responsive"/>
+                    </div>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Search</button>
-          </form>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-    <!-- post -->
-        <div class="container-fluid no-padding">
-      <div class="row">
-        <div class="col-md-12">
-          <img src="/photos/<%= @post.image %>" alt="placeholder 960" class="stop img-responsive" />
-        </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <div class="container">
-      <h1><%= @post.title %></h1>
-    </div>
-    <div class="container">
-      <p><%= @post.body %></p>
-      <p><%= @post.body %></p>
-      <p><%= @post.body %></p>
-      <p><%= @post.body %></p>
-      <p><%= @post.body %></p>
-    </div>
-    <br>
-    <hr>
-    <!-- author avatar and text -->
-    <div class="container">
-
-
-    <div class="well">
-      <div class="row">
-        <div class="col-xs-3 col-sm-3">
-          <img src="/photos/jack.jpg" alt="jack">
-        </div>
-        <div class="col-xs-3 col-sm-4">
-          <h4>Samurai Jack</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-      </div>
-    </div>
-    </div>
-    <br>
-    <hr>
-    <div class="container">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-2">
-          </div>
-          <div class="col-xs-12 col-sm-8">
-            <div class="form-group">
-               <label for="exampleTextarea"><h3>Leave a Comment...</h3></label>
-
-               <%= bootstrap_form_for [@post, @comment] do |f| %>
-                 <%= f.text_field :title%>
-                 <%= f.text_area :body%>
-                 <%=f.submit 'Submit', class: "btn btn-primary"%>
-               <%end%>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-      <!--Comment section  -->
-
-        <div class="container">
-          <div class="container">
-      	<div class="row">
-
-          <div class="comments-container">
-      		<h1>Comments </h1>
-
-      		<ul id="comments-list" class="comments-list">
-      			<li>
-      				<div class="comment-main-level">
-      					<!-- Avatar -->
-      					<div class="comment-avatar"><img src="/photos/jack.jpg" alt=""></div>
-      					<!-- comments manin -->
-      					<div class="comment-box">
-      						<div class="comment-head">
-      							<h6 class="comment-name by-author"><a href="#">Samurai Jack</a></h6>
-      							<span>20 minutes ago</span>
-      							<i class="fa fa-reply"></i>
-      							<i class="fa fa-heart"></i>
-      						</div>
-      						<div class="comment-content">
-      							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-      						</div>
-      					</div>
-      				</div>
-      				<!-- Respuestas de los comentarios -->
-      				<ul class="comments-list reply-list">
-      					<li>
-      						<!-- Avatar -->
-      						<div class="comment-avatar"><img src="/photos/aku.png" alt=""></div>
-      						<!-- Contenedor del Comentario -->
-      						<div class="comment-box">
-      							<div class="comment-head">
-      								<h6 class="comment-name"><a href="#">Aku</a></h6>
-      								<span>10 minutes ago</span>
-      								<i class="fa fa-reply"></i>
-      								<i class="fa fa-heart"></i>
-      							</div>
-      							<div class="comment-content">
-      								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-      							</div>
-      						</div>
-      					</li>
-
-      					<li>
-      						<!-- Avatar -->
-      						<div class="comment-avatar"><img src="/photos/jack.jpg" alt=""></div>
-      						<!-- Contenedor del Comentario -->
-      						<div class="comment-box">
-      							<div class="comment-head">
-      								<h6 class="comment-name by-author"><a href="#">Samurai Jack</a></h6>
-      								<span>10 minutes ago</span>
-      								<i class="fa fa-reply"></i>
-      								<i class="fa fa-heart"></i>
-      							</div>
-      							<div class="comment-content">
-      								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-      							</div>
-      						</div>
-      					</li>
-      				</ul>
-      			</li>
-
-      			<li>
-      				<div class="comment-main-level">
-      					<!-- Avatar -->
-      					<div class="comment-avatar"><img src="/photos/aku.png" alt=""></div>
-      					<!-- Contenedor del Comentario -->
-      					<div class="comment-box">
-      						<div class="comment-head">
-      							<h6 class="comment-name"><a href="#">Aku</a></h6>
-      							<span>10 minutes ago</span>
-      							<i class="fa fa-reply"></i>
-      							<i class="fa fa-heart"></i>
-      						</div>
-      						<div class="comment-content">
-      							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-      						</div>
-      					</div>
-      				</div>
-      			</li>
-      		</ul>
-      	</div>
-        <div class="text-center center-block">
-          <a href="#"><h2>More Comments</h2></a>
-        </div>
-        <br>
-        <br>
-        <div class="container">
-        <div class="text-center center-block">
+            <br>
+            <br>
+            <div class="container">
+                <h1><%= @post.title %></h1>
+            </div>
+            <div class="container">
+                <p><%= @post.body %></p>
+                <p><%= @post.body %></p>
+                <p><%= @post.body %></p>
+                <p><%= @post.body %></p>
+                <p><%= @post.body %></p>
+            </div>
+            <br>
             <hr>
-                <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-              <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-              <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-              <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-          </div>
-          <hr>
-        </div>
-      </div>
-  </body>
-</html>
+            <!-- author avatar and text -->
+            <div class="container">
+                <div class="well">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="<%= asset_path @user.avatar %>" alt="avatar">
+                            </a>
+                        </div>
+                        <h3><%= @user.name %></h3>
+                        <p><%= @user.body%></p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <div class="container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-xs-12 col-sm-8">
+                            <div class="form-group">
+                                <label for="exampleTextarea">
+                                    <h3>Leave a Comment...</h3>
+                                </label>
+
+                                <%= bootstrap_form_for [@post, @comment] do |f| %>
+                                <%= f.text_field :title%>
+                                <%= f.text_area :body%>
+                                <%=f.submit 'Submit', class: "btn btn-primary"%>
+                                <%end%>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--Comment section  -->
+
+                <div class="container">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="comments-container">
+                                <h1>Comments
+                                </h1>
+
+                                <ul id="comments-list" class="comments-list">
+                                    <li>
+                                        <div class="comment-main-level">
+                                            <!-- Avatar -->
+                                            <div class="comment-avatar"><img src="/photos/jack.jpg" alt=""></div>
+                                            <!-- comments manin -->
+                                            <div class="comment-box">
+                                                <div class="comment-head">
+                                                    <h6 class="comment-name by-author">
+                                                        <a href="#">Samurai Jack</a>
+                                                    </h6>
+                                                    <span>20 minutes ago</span>
+                                                    <i class="fa fa-reply"></i>
+                                                    <i class="fa fa-heart"></i>
+                                                </div>
+                                                <div class="comment-content">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Respuestas de los comentarios -->
+                                        <ul class="comments-list reply-list">
+                                            <li>
+                                                <!-- Avatar -->
+                                                <div class="comment-avatar"><img src="/photos/aku.png" alt=""></div>
+                                                <!-- Contenedor del Comentario -->
+                                                <div class="comment-box">
+                                                    <div class="comment-head">
+                                                        <h6 class="comment-name">
+                                                            <a href="#">Aku</a>
+                                                        </h6>
+                                                        <span>10 minutes ago</span>
+                                                        <i class="fa fa-reply"></i>
+                                                        <i class="fa fa-heart"></i>
+                                                    </div>
+                                                    <div class="comment-content">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <!-- Avatar -->
+                                                <div class="comment-avatar"><img src="/photos/jack.jpg" alt=""></div>
+                                                <!-- Contenedor del Comentario -->
+                                                <div class="comment-box">
+                                                    <div class="comment-head">
+                                                        <h6 class="comment-name by-author">
+                                                            <a href="#">Samurai Jack</a>
+                                                        </h6>
+                                                        <span>10 minutes ago</span>
+                                                        <i class="fa fa-reply"></i>
+                                                        <i class="fa fa-heart"></i>
+                                                    </div>
+                                                    <div class="comment-content">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <div class="comment-main-level">
+                                            <!-- Avatar -->
+                                            <div class="comment-avatar"><img src="/photos/aku.png" alt=""></div>
+                                            <!-- Contenedor del Comentario -->
+                                            <div class="comment-box">
+                                                <div class="comment-head">
+                                                    <h6 class="comment-name">
+                                                        <a href="#">Aku</a>
+                                                    </h6>
+                                                    <span>10 minutes ago</span>
+                                                    <i class="fa fa-reply"></i>
+                                                    <i class="fa fa-heart"></i>
+                                                </div>
+                                                <div class="comment-content">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="text-center center-block">
+                                <a href="#">
+                                    <h2>More Comments</h2>
+                                </a>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="container">
+                                <div class="text-center center-block">
+                                    <hr>
+                                    <a href="https://www.facebook.com/bootsnipp">
+                                        <i id="social-fb" class="fa fa-facebook-square fa-3x social"></i>
+                                    </a>
+                                    <a href="https://twitter.com/bootsnipp">
+                                        <i id="social-tw" class="fa fa-twitter-square fa-3x social"></i>
+                                    </a>
+                                    <a href="https://plus.google.com/+Bootsnipp-page">
+                                        <i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i>
+                                    </a>
+                                    <a href="mailto:bootsnipp@gmail.com">
+                                        <i id="social-em" class="fa fa-envelope-square fa-3x social"></i>
+                                    </a>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+                    </body>
+                </html>
