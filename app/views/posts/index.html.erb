@@ -1,1 +1,26 @@
-<h1>posts</h1>
+
+        <div class="container" id="main">
+          <h1>All Posts</h1>
+          <br>
+          <hr>
+          <div class="row">
+            <% @posts.each do |post| %>
+
+                <div style="height: 400px; text-overflow: ellipsis;" class="col-xs-12 col-sm-12 col-md-6 col-lg-4 post-thumbs" >
+                  <a href="#"><img class="img-responsive" src="/photos/<%= post.image %>" alt="photo"></a>
+                  <span class="glyphicon glyphicon-heart"></span>
+                  <span class="label label-pill label-primary">42</span>
+                  <span class="pull-right glyphicon glyphicon-bookmark"></span>
+                  <h3><%= link_to post.title, post_path(post) %></h3>
+
+                </div>
+                <% end %>
+          </div>
+
+        </div>
+
+        <br>
+        <br>
+        <link rel="stylesheet" href="/css/index_style.css">
+  </body>
+</html>
