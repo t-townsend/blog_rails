@@ -1,0 +1,30 @@
+<br>
+<br>
+<div style="margin-top: 50px;" class="container">
+    <div class="well">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-xs-12 col-sm-8">
+                <div class="form-group">
+                    <label for="exampleTextarea">
+                        <h1>Login...</h1>
+                      </label>
+                        <%= bootstrap_form_tag url:'sessions_path' do |f|%>
+                        <%= f.email_field :email%>
+                        <%= f.password_field :password%>
+                        <%= link_to "(forgot password)", new_password_reset_path %>
+                        <br>
+                        <br>
+                        <%= f.submit 'Login', class: "btn btn-primary"%>
+                        <%end%>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <link rel="stylesheet" href="/css/index_style.css">
+    </body>
+</html>

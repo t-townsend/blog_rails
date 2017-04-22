@@ -1,0 +1,29 @@
+<br>
+<br>
+<div style="margin-top: 50px;" class="container">
+    <div class="well">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-xs-12 col-sm-8">
+                <div class="form-group">
+                    <label for="exampleTextarea">
+                        <h1>Forgot Password...</h1>
+                      </label>
+                        <%= bootstrap_form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+                        <%= render 'shared/error_messages' %>
+                        <%= hidden_field_tag :email, @user.email%>
+                        <%= f.password_field :password%>
+                        <%= f.password_field :password_confirmation%>
+                        <%= f.submit 'Update Password', class: "btn btn-primary"%>
+                        <%end%>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <link rel="stylesheet" href="/css/index_style.css">
+    </body>
+</html>

@@ -4,7 +4,8 @@
             <div class="container-fluid no-padding">
                 <div class="row">
                     <div class="col-md-12">
-                        <img src="/photos/<%= @post.image %>" alt="placeholder 960" class="stop img-responsive"/>
+
+                        <%= image_tag @post.image.url, alt: "placeholder", class: "stop img-responsive" %>
                     </div>
                 </div>
             </div>
@@ -15,15 +16,15 @@
             </div>
             <div class="container">
                 <p><%= @post.body %></p>
-                <p><%= @post.body %></p>
-                <p><%= @post.body %></p>
-                <p><%= @post.body %></p>
-                <p><%= @post.body %></p>
                 <hr>
-                <p style="text-align: right;"><%= @post.created_at %></p>
-
+                <p style="text-align: right;"><%= l Time.now, format: :long %></p>
+                <% if can? :edit, @post %>
                 <%= link_to "Edit", edit_post_path(@post), class: "btn btn-primary" %>
+                <% end %>
+
+                <% if can? :destroy, @post %>
                 <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}, class:"btn btn-danger" %>
+                <% end %>
             </div>
 
             <br>
@@ -34,7 +35,7 @@
                     <div class="row">
                         <div class="col-xs-6 col-md-3">
                             <a href="#" class="thumbnail">
-                                <img src="<%= asset_path @user.avatar %>" alt="avatar">
+                                <%= image_tag @user.avatar.name %>
                             </a>
                         </div>
                         <h3><%= @user.name %></h3>

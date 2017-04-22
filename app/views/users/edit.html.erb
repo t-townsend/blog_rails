@@ -1,0 +1,28 @@
+
+            <br>
+            <br>
+<div style="margin-top: 50px;" class="container">
+    <div class="well">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-xs-12 col-sm-8">
+                <div class="form-group">
+                    <label for="exampleTextarea">
+                        <h3>Edit User Info...</h3>
+                    </label>
+
+                    <%= bootstrap_form_for @user do |f| %>
+                    <%= f.email_field :email%>
+                    <%= f.text_field :name%>
+                    <%= f.text_area :body%>
+                    <%=f.submit 'Edit', class: "btn btn-primary"%>
+                    <%end%>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <link rel="stylesheet" href="/css/index_style.css">
+  </body>
