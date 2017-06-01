@@ -17,25 +17,25 @@ Deployed to heroku at https://protected-fjord-95687.herokuapp.com/
 
 ### Home Page ###
 
-![Alt text](/app/assets/images/image1.jpg)
+![Alt text](/app/assets/images/image1.png)
 ***
 
 ### Post Index ###
 
-![Alt text](/app/assets/images/image2.jpg)
+![Alt text](/app/assets/images/image2.png)
 ***
 
 ### Sign In Form ###
 
-![Alt text](/app/assets/images/image3.jpg)
+![Alt text](/app/assets/images/image3.png)
 ***
 
 ### Post Show Page ###
 
-![Alt text](/app/assets/images/image4.jpg)
+![Alt text](/app/assets/images/image4.png)
 ***
 
 ### Comment Section ###
 
-![Alt text](/app/assets/images/image5.jpg)
+![Alt text](/app/assets/images/image5.png)
 ***
