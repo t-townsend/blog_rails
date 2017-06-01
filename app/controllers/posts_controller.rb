@@ -14,6 +14,7 @@ class PostsController < ApplicationController
      @post = Post.find(params[:id ])
      @comment = Comment.new
      @user = @post.user
+     @like = @post.like_for(current_user)
    end
 
    def edit

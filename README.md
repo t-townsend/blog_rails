@@ -1,25 +1,41 @@
-# README
+# Blog in Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This website was built in Ruby on Rails, and was an assignment while I was at
+CodeCore for the full stack developer bootcamp. It allows the user to sign in or
+sign up, and when this is done, the user can add comments on the posts or create
+new posts. There is built in functionality to upload an image for the cover of
+the post, and for the user's avatar. Right now it is seeded with filler text,
+which will change when other bugs are fixed. The app also has a mailer function,
+which emails the user when another user comments on their post. This is a RESTful
+app with CRUD used on the posts and comments. There is a liking function, which
+is a work in progress, which uses AJAX calls to update the page, so it doesn't
+refresh completely.
 
-Things you may want to cover:
+**Technologies Used: Ruby on Rails, Postgres, JavaScript, HTML, CSS, Bootstrap, AJAX**
 
-* Ruby version
+Deployed to heroku at https://protected-fjord-95687.herokuapp.com/
 
-* System dependencies
+### Home Page ###
 
-* Configuration
+![Alt text](/app/assets/images/image1.jpg)
+***
 
-* Database creation
+### Post Index ###
 
-* Database initialization
+![Alt text](/app/assets/images/image2.jpg)
+***
 
-* How to run the test suite
+### Sign In Form ###
 
-* Services (job queues, cache servers, search engines, etc.)
+![Alt text](/app/assets/images/image3.jpg)
+***
 
-* Deployment instructions
+### Post Show Page ###
 
-* ...
-# blog_rails
+![Alt text](/app/assets/images/image4.jpg)
+***
+
+### Comment Section ###
+
+![Alt text](/app/assets/images/image5.jpg)
+***

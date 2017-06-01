@@ -10,10 +10,11 @@ class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" },
   default_url: "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
-  # # User.full_name #=> "bob"
-  # def self.full_name
-  #   "bob"
-  # end
+
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
+
+
     def authenticated?(attribute, token)
      digest = send("#{attribute}_digest")
      return false if digest.nil?
@@ -42,7 +43,7 @@ class User < ApplicationRecord
       def authenticated?(remember_token)
         BCrypt::Password.new(remember_digest).is_password?(remember_token)
       end
-      
+
 
     def full_name
       name

@@ -1,7 +1,8 @@
+
 @media print {
   a[href]:after {
     content: none !important;
-     
+
   }
 }
 
@@ -17,9 +18,7 @@ p {
 img{
   border-radius: 10px;
 }
-.glyphicon {
-font-size: 25px;
-}
+
 
 .footer {
     position: absolute;
@@ -60,6 +59,7 @@ nav {
   }
 .nav li{
   padding-right:5px;
+
  }
 
 @media screen and (max-width: 991px) {

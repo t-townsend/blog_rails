@@ -47,6 +47,8 @@ gem "paperclip", "~> 5.0.0"
 
 gem 'letter_opener'
 
+gem "font-awesome-rails"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

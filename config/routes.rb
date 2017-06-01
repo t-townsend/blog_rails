@@ -8,13 +8,16 @@ Rails.application.routes.draw do
 
 resources :posts do
   resources :comments, only: [:create, :destroy]
+  resources :likes, only: [:create, :destroy]
 end
 
 resources :sessions, only: [:new, :create] do
    delete :destroy, on: :collection
  end
 
-resources :users
+resources :users do
+  resources :likes, only: [:index]
+end
 
 resources :password_resets, only: [:new, :create, :edit, :update]
 
