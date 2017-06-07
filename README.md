@@ -13,7 +13,7 @@ refresh completely.
 
 **Technologies Used: Ruby on Rails, Postgres, JavaScript, HTML, CSS, Bootstrap, AJAX**
 
-Deployed to heroku at https://blog-on-rails.herokuapp.com/
+
 
 ### Home Page ###
 
