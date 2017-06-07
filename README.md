@@ -13,7 +13,7 @@ refresh completely.
 
 **Technologies Used: Ruby on Rails, Postgres, JavaScript, HTML, CSS, Bootstrap, AJAX**
 
-Deployed to heroku at https://protected-fjord-95687.herokuapp.com/
+Deployed to heroku at https://blog-on-rails.herokuapp.com/
 
 ### Home Page ###
 
@@ -37,5 +37,5 @@ Deployed to heroku at https://protected-fjord-95687.herokuapp.com/
 
 ### Comment Section ###
 
-![Alt text](/app/assets/images/image5.png)
+![Alt text](/app/assets/images/image5.pn)
 ***
